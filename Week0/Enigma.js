@@ -169,7 +169,11 @@ function runEnigmaSimulation(gw) {
     				fastct = 0;
     				medct++;
 				}
-
+            if (medct===25) {
+					rotorList[1].setting = (rotorList[1].setting + 1) % 26;
+    				rotorList[1].labelObj.setLabel(String.fromCharCode(65 + rotorList[1].setting));
+					medct++;
+				}
 				if (medct===26) {
 					rotorList[0].setting = (rotorList[0].setting + 1) % 26;
             	rotorList[0].labelObj.setLabel(String.fromCharCode(65 + rotorList[0].setting));
